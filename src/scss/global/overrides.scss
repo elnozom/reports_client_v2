@@ -1,0 +1,7 @@
+.v-application , .bgdarker{
+    transition: background .3s ease-in-out;
+}
+
+.theme--dark.v-application{
+    background-color: var(--bg) !important;
+}

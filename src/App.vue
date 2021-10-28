@@ -1,32 +1,55 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
-  </div>
+  <v-app>
+    <loading v-if="loading"/>
+    <drawer  v-if="!loading"/>
+
+    <v-main v-if="!loading">
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import Vue from "vue";
+import Drawer from "@/components/layouts/Drawer.vue";
+import Loading from "@/components/layouts/Loading.vue";
+import {mapGetters} from 'vuex'
+import { switchLanguage } from "@/utils/helpers";
 
-#nav {
-  padding: 30px;
-}
+export default Vue.extend({
+  name: "App",
+  components: {
+    Drawer,
+    Loading
+  },
+  computed:{
+     ...mapGetters({
+      loading: 'ui/loading'
+    })
+  },
+  methods:{
+    init() {
+      // handle default  language
+      const locale = localStorage.getItem("locale") || "ar";
+      switchLanguage(locale, this);
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+      // handle default  theme
+      const mode = localStorage.getItem("mode");
+      // check if mode is set to make the change
+      if (mode) {
+        this.$vuetify.theme.dark = mode !== "light";
+      }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+      setTimeout(() => {
+        this.$store.commit("ui/appLoaded");
+        console.log("asdasdasd")
+      }, 2000);
+    },
+  },
+  created(){
+    this.init()
+  }
+});
+</script>
+
+<style src="@/scss/global/globals.css" rel="stylesheet" type="text/css" />

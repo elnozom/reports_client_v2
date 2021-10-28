@@ -1,0 +1,29 @@
+.sidebar{
+    & .v-list-item {
+        border-radius: 10px 0 0 10px;
+        margin-left  : 10px;
+    
+        &--active {
+    
+            background: var(--main-gredient);
+            color     : #fff;
+            box-shadow: var(--color-boxshadow);
+    
+            & .primary--text {
+                color: #fff;
+            }
+        }
+    
+        &::before {
+            border-radius: 10px 0 0 10px;
+        }
+    }
+    
+    & .logo {
+        height:64px;
+        & a img {
+            width: 200px;
+            transition: var(--primary-transition);
+        }
+    }
+}

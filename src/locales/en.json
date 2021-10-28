@@ -1,0 +1,8 @@
+{
+  "hello": "Hello",
+  "powerd_by":"powerd by",
+  "sidebar" : {
+    "products" : "Products",
+    "orders" : "Orders"
+  }
+}

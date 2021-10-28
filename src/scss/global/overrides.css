@@ -1,0 +1,9 @@
+.v-application, .bgdarker {
+  -webkit-transition: background .3s ease-in-out;
+  transition: background .3s ease-in-out;
+}
+
+.theme--dark.v-application {
+  background-color: var(--bg) !important;
+}
+/*# sourceMappingURL=overrides.css.map */

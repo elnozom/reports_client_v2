@@ -1,0 +1,30 @@
+.sidebar .v-list-item {
+  border-radius: 10px 0 0 10px;
+  margin-left: 10px;
+}
+
+.sidebar .v-list-item--active {
+  background: var(--main-gredient);
+  color: #fff;
+  -webkit-box-shadow: var(--color-boxshadow);
+          box-shadow: var(--color-boxshadow);
+}
+
+.sidebar .v-list-item--active .primary--text {
+  color: #fff;
+}
+
+.sidebar .v-list-item::before {
+  border-radius: 10px 0 0 10px;
+}
+
+.sidebar .logo {
+  height: 64px;
+}
+
+.sidebar .logo a img {
+  width: 200px;
+  -webkit-transition: var(--primary-transition);
+  transition: var(--primary-transition);
+}
+/*# sourceMappingURL=sidebar.css.map */
