@@ -1,27 +1,18 @@
-// export const  switchMode = (mode: string , ctx: any): void => {
-//       // set the mode to anti mode for switch
-//       // set the anti mode to clone constant
-//       // and finally set the mode on localestorage to remember use prefrences
-//       ctx.mode = mode;
-//       localStorage.setItem("mode", ctx.mode);
-// }
-
-// export const setDefaultMode =() =>  {
-//     // get the mode from localstorage
-//     const mode = localStorage.getItem("mode");
-//     // simply return nothing if mode is not exist
-//     if (!mode) {
-//       return;
-//     }
-//     // set our mode and anti mode variables
-//     this.switchMode(mode);
-//   },
 export const switchLanguage = (locale: string, ctx: any) => {
   localStorage.setItem("locale", locale);
   ctx.$vuetify.rtl = locale === "ar";
   ctx.$vuetify.lang.current = locale;
   ctx.$i18n.locale = locale;
 };
+
+export const numberWithCommas = (x: number) => {
+    const xFixed = x.toFixed(3)
+    return xFixed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+export const currency = (x:number):string => {
+  return `${numberWithCommas(x)} EGP`
+}
 
 export const switchMode = (mode: string, ctx: any) => {
   localStorage.setItem("mode", mode);

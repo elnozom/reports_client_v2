@@ -10,6 +10,11 @@ const routes: Array<RouteConfig> = [
     name: "Home",
     component: Home,
   },
+  {
+    path: "/pos/cashtray",
+    name: "pos-cashtray",
+    component: () => import('../views/pos/cashtray.vue'),
+  },
 ];
 
 const router = new VueRouter({

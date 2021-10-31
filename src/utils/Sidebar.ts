@@ -6,7 +6,7 @@ export default [
   },
   {
     icon: "mdi-cart-arrow-up",
-    title: "sidebar.orders",
-    to: `/orders`,
+    title: "sidebar.cashtray",
+    to: `/pos/cashtray`,
   },
 ];
