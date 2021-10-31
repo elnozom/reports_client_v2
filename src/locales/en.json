@@ -1,6 +1,7 @@
 {
   "hello": "Hello",
   "powerd_by":"powerd by",
+  "error_getting_data" : "some unknown error happened please refresh the page or call customer support",
   "sidebar" : {
     "products" : "Products",
     "cashtray" : "cashtray"

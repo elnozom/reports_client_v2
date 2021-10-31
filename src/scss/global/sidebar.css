@@ -27,4 +27,9 @@
   -webkit-transition: var(--primary-transition);
   transition: var(--primary-transition);
 }
+
+.sidebar .logo::after {
+  content: "";
+  border-bottom: 1px solid black;
+}
 /*# sourceMappingURL=sidebar.css.map */

@@ -19,18 +19,9 @@ function loadLocaleMessages(): LocaleMessages {
   });
   return messages;
 }
-const numberFormats = {
-  'en-US': {
-    currency: {
-      style: 'currency',
-      currency: 'EGP'
-    }
-  },
-}
 
 export default new VueI18n({
   locale: process.env.VUE_APP_I18N_LOCALE || "ar",
   fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || "ar",
-  numberFormats,
   messages: loadLocaleMessages(),
 });

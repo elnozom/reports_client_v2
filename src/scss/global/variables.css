@@ -9,5 +9,11 @@
   --main-gredient: linear-gradient(45deg, #0088BB, #004674);
   --success: #4CAF50;
   --warning: #FB8C00;
+  --text-color:#fff;
 }
-/*# sourceMappingURL=variables.css.map */
+
+.theme--light {
+  --text-color:#000;
+  --bg:#fff;
+  --bgdarker:#eee;
+}

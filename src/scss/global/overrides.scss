@@ -5,3 +5,7 @@
 .theme--dark.v-application{
     background-color: var(--bg) !important;
 }
+tbody tr.v-data-table__mobile-table-row td:first-child {
+    background-color: var(--primary) !important;
+    color: #fff !important;
+}

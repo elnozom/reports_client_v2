@@ -25,5 +25,9 @@
             width: 200px;
             transition: var(--primary-transition);
         }
+        &::after{
+            content: "";
+            border-bottom: 1px solid black;
+        }
     }
 }

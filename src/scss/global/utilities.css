@@ -1,0 +1,7 @@
+.text-color {
+  color: var(--text-color) !important;
+}
+
+.w-full {
+  width: 100%;
+}

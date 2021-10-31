@@ -2,7 +2,6 @@
   <v-app>
     <loading v-if="loading"/>
     <drawer  v-if="!loading"/>
-
     <v-main v-if="!loading">
       <router-view />
     </v-main>
