@@ -1,7 +1,14 @@
 
 .text-color{
     color:var(--text-color) !important
-  }
-  .w-full{
-      width: 100%;
-  }
+}
+.w-full{
+    width: 100%;
+}
+
+.bg-primary{
+    background-color: var(--primary);
+}
+.bg-gredient{
+    background: var(--main-gredient);
+}

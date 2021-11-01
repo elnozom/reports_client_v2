@@ -5,3 +5,12 @@
 .w-full {
   width: 100%;
 }
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-gredient {
+  background: var(--main-gredient);
+}
+/*# sourceMappingURL=utilities.css.map */

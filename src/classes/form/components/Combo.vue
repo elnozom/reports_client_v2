@@ -1,0 +1,31 @@
+<template>
+  <v-combobox
+    @change="change"
+    :cache-items="input.cache"
+    :item-text="input.text"
+    :item-value="input.value"
+    :items="input.items"
+    :loading="input.loading"
+    :prepend-icon="input.icon"
+    return-object
+    hide-details
+    :label="$t(input.label)"
+    single-line
+  ></v-combobox>
+</template>
+
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  props: {
+    input: Object,
+  },
+  methods:{
+      change(val:any){
+          this.$emit('change' , val)
+          console.log('change')
+          console.log(val)
+      }
+  }
+});
+</script>

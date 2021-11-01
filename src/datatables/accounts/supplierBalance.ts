@@ -17,6 +17,7 @@ const params:DatatableIntetrface = {
   title : "supplier balance",
   headers ,
   url,
+  hasFooter:true,
   payload : {}
 }
 const datatable = new Datatable(params)

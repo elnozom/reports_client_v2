@@ -1,4 +1,5 @@
 .v-application, .bgdarker {
+  -webkit-transition: background .3s ease-in-out;
   transition: background .3s ease-in-out;
 }
 
@@ -10,3 +11,4 @@ tbody tr.v-data-table__mobile-table-row td:first-child {
   background-color: var(--primary) !important;
   color: #fff !important;
 }
+/*# sourceMappingURL=overrides.css.map */
