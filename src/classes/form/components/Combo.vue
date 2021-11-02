@@ -23,8 +23,6 @@ export default Vue.extend({
   methods:{
       change(val:any){
           this.$emit('change' , val)
-          console.log('change')
-          console.log(val)
       }
   }
 });

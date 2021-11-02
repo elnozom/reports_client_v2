@@ -13,6 +13,12 @@
                 color: #fff;
             }
         }
+
+        &.sub{
+            & .v-list-item__action{
+                margin:0 20px;
+            }
+        }
     
         &::before {
             border-radius: 10px 0 0 10px;

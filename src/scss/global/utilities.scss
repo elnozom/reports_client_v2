@@ -12,3 +12,17 @@
 .bg-gredient{
     background: var(--main-gredient);
 }
+.primary-text{
+    color:var(--primary);
+}
+.md-hidden{
+    @media(max-width:600px){
+        display: none !important;
+    }
+}
+.w-40{
+    width: 40px;
+}
+.transition{
+    transition: var(--transition)
+}

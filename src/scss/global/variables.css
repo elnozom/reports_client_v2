@@ -10,6 +10,7 @@
   --success: #4CAF50;
   --warning: #FB8C00;
   --text-color:#fff;
+  --transition: all .3s ease-in;
 }
 
 .theme--light {

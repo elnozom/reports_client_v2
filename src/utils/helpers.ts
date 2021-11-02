@@ -14,7 +14,14 @@ export const currency = (x:number):string => {
   return `${numberWithCommas(x)} EGP`
 }
 
-
+export const clearNullValues = (obj:Object) => {
+  let clone = { ...obj }
+  Object.keys(clone).forEach((key) => {
+    let k = key as keyof typeof clone
+    clone[k] === null || '' ? delete clone[k] : ''
+  })
+  return clone
+}
 export const currentYear = new Date().getFullYear();
 
 export const currentMonth = new Date().getMonth() + 1
@@ -22,6 +29,34 @@ export const currentMonth = new Date().getMonth() + 1
 export const currentDay = new Date().getDay()
 
 export const currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+
+
+export const accountTypes = [
+  {
+    key: 'customer',
+    value: 1
+  },
+  {
+    key: 'supplier',
+    value: 2
+  },
+  {
+    key: 'expenses',
+    value: 3
+  },
+  {
+    key: 'bank',
+    value: 4
+  },
+  {
+    key: 'safe',
+    value: 5
+  },
+  {
+    key: 'other',
+    value: 6
+  }
+]
 
 
 export const lastTenYearsArr = ():number[] =>{

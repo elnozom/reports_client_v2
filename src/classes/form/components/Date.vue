@@ -1,0 +1,55 @@
+<template>
+  <v-menu
+    v-model="active"
+    :close-on-content-click="false"
+    :nudge-right="40"
+    lazy
+    transition="scale-transition"
+    offset-y
+    full-width
+    max-width="290px"
+    min-width="290px"
+  >
+    <template v-slot:activator="{ on }">
+      <v-text-field
+        :label="$t(input.label)"
+        prepend-icon="mdi-calendar-blank-outline"
+        readonly
+        :value="model"
+        v-on="on"
+      ></v-text-field>
+    </template>
+    <v-date-picker
+      locale="en-in"
+      color="primary"
+      :min="input.min"
+      :max="input.max"
+      @change="change"
+      no-title
+    ></v-date-picker>
+  </v-menu>
+</template>
+
+
+<script lang="ts">
+import Vue from "vue";
+export default Vue.extend({
+  data() {
+      let model = this.input.value
+    return {
+      active: false,
+      model,
+    };
+  },
+  props: {
+    input: Object,
+  },
+  methods: {
+    change(val: any) {
+        this.active = false
+        this.model = val
+      this.$emit("change", val);
+    },
+  },
+});
+</script>

@@ -2,6 +2,7 @@ import { currentYear } from '@/utils/helpers';
 import { Header } from '@/classes/datatable/datatableInterface';
 import DatatableIntetrface from '@/classes/datatable/datatableInterface'
 import Datatable  from '@/classes/datatable/datatable'
+import cashtrayFilter from '@/classes/form/forms/cashtrayFilter';
 
 
 const headers:Header[] = [
@@ -24,6 +25,8 @@ const url = "cashtray"
 const params:DatatableIntetrface = {
     title : "cashtray",
     headers ,
+    description:"cashtray_desc",
+    filters:cashtrayFilter,
     url,
     hasFooter:true,
     payload

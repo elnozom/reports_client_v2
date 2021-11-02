@@ -13,4 +13,23 @@
 .bg-gredient {
   background: var(--main-gredient);
 }
+
+.primary-text {
+  color: var(--primary);
+}
+
+@media (max-width: 600px) {
+  .md-hidden {
+    display: none !important;
+  }
+}
+
+.w-40 {
+  width: 40px;
+}
+
+.transition {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
 /*# sourceMappingURL=utilities.css.map */

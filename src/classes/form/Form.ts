@@ -3,6 +3,7 @@ import { FormInterface, InputInterface, SelectInputInterface } from './interface
 export default class Form   extends HttpClient implements FormInterface {
     inputs: InputInterface[]
     loading:boolean = false
+    public form:Object = {} as any
     valid:boolean = false
     submit:Function
     constructor(inputs: InputInterface[] , submit:Function){
@@ -12,12 +13,15 @@ export default class Form   extends HttpClient implements FormInterface {
         this._initInputs(inputs)
     }
     private _initInputs(inputs:InputInterface[]){
+        let form = {} as any
         inputs.forEach((input:InputInterface) => {
+            form[input.name] = input.initial || ''
             if(input.type == 'select' || input.type == 'combo') {
                 const select = input as SelectInputInterface
                 if (select.initialFetch) this._getInputItems(select)
             }
         })
+        this.form = form
     }
 
     private _getInputItems(input:SelectInputInterface){

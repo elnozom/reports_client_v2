@@ -4,14 +4,29 @@ export type TextInputInterface = {
     icon: string
     cols: number
     type:string
+    val?:any
+    initial?:any,
     required?:boolean
     value:any
 }
+export type DateInputInterface = {
+    name: string
+    label : string
+    min : string
+    max : string
+    val?:any
+    value : string
+    initial?:any
+    type: string
+}
 
 export type SelectInputInterface = {
+    name: string
     cache: boolean
     loading: boolean
+    clearable?:boolean
     text: string
+    val?:any
     value: string
     type:string
     initialFetch:boolean
@@ -24,7 +39,7 @@ export type SelectInputInterface = {
     payload?:Object
 }
 
-export type InputInterface = SelectInputInterface | TextInputInterface
+export type InputInterface = SelectInputInterface | TextInputInterface | DateInputInterface
 
 export interface FormInterface {
     inputs: InputInterface[]

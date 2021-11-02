@@ -1,10 +1,13 @@
 import Form from '../Form';
 import { InputInterface} from './../interface';
-import {searchInput , yearInput , storeInput , groupInput} from '../inputs/InputStore'
+import {searchInput ,accountType,toDate, yearInput , storeInput , groupInput , fromDate} from '../inputs/InputStore'
 const inputs:InputInterface[] = [
     searchInput,
     storeInput,
     groupInput,
+    accountType,
+    fromDate,
+    toDate,
     yearInput
 ]
 

@@ -1,4 +1,5 @@
-import { TextInputInteerface } from './../form/inpuInterface';
+import Form from "../form/Form";
+
 export interface Header {
     value:string
     text:string
@@ -14,8 +15,9 @@ export interface Totals {
 export default interface DatatableIntetrface {
     title: string
     url:string
+    description:string
     headers: Header[]
     payload:Object
-    filters?:TextInputInteerface
+    filters?:Form
     hasFooter:boolean
 }

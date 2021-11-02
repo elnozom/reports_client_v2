@@ -14,6 +14,10 @@
   color: #fff;
 }
 
+.sidebar .v-list-item.sub .v-list-item__action {
+  margin: 0 20px;
+}
+
 .sidebar .v-list-item::before {
   border-radius: 10px 0 0 10px;
 }

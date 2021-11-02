@@ -11,7 +11,7 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    path: "/pos/cashtray",
+    path: "/cashtray",
     name: "pos-cashtray",
     component: () => import('../views/pos/cashtray.vue'),
   },

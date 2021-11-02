@@ -1,11 +1,12 @@
 <template>
   <v-select
-    @change="$emit('change' , val)"
+    @change="change"
     :cache-items="input.cache"
     :item-text="input.text"
     :item-value="input.value"
     :value="input.initial || null"
     :items="input.items"
+    :clearable="input.clearable"
     :loading="input.loading"
     :prepend-icon="input.icon"
     hide-details
@@ -20,5 +21,11 @@ export default Vue.extend({
   props: {
     input: Object,
   },
+  methods:{
+      change(val:any){
+        this.input.val = val
+          this.$emit('change')
+      }
+  }
 });
 </script>

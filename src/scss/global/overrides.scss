@@ -9,3 +9,6 @@ tbody tr.v-data-table__mobile-table-row td:first-child {
     background-color: var(--primary) !important;
     color: #fff !important;
 }
+.v-navigation-drawer , .v-app-bar{
+    transition: var(--transition)
+}

@@ -1,16 +1,11 @@
 <template>
   <div>
-    <v-card>
+   
       <v-container>
         <v-row>
-          <v-col cols="6">
-            <v-text-field label="asdsd"/>
-          </v-col>
-          <v-col cols="6">
-            <v-text-field label="asdsd"/>
-          </v-col>
-          <v-col cols="6" v-if="table.hasFooter">
-            <v-btn color="primary" @click.prevent="showTotals">{{$t('show_totals')}}</v-btn>
+          <v-col cols="12" v-if="table.hasFooter  && table.data.length > 0">
+            <h2 class="primary-text mb-4">{{$t(table.title)}}</h2>
+            <p class="">{{$t(table.description)}}</p>
           </v-col>
           <v-col cols="12">
           <v-data-table
@@ -21,8 +16,15 @@
             :search="table.search"
             class="elevation-4"
             fixed-header
-            height="600px"
+            height="300px"
           >
+            <template v-slot:top >
+               <app-form :form="table.filters" @change="filter"/>
+               <div class="pa-4">
+                <v-btn color="primary" class="w-full my-4" @click.prevent="showTotals">{{$t('show_totals')}}</v-btn>
+
+               </div>
+            </template>
             <template v-slot:body v-if="table.error">
               <tr class="text-center py-4">
                 <td :colspan="table.headers.length">
@@ -30,8 +32,8 @@
                 </td>
               </tr>
             </template>
-            <template slot="body.append" v-if="table.hasFooter">
-              <tr class="text-center sm-hidden black--text bg-gredient">
+            <template slot="body.append" v-if="table.hasFooter && table.data.length > 0">
+              <tr class="text-center md-hidden black--text bg-gredient">
                 <th
                   class="text-center text-color"
                   v-for="(header, index) in table.headers"
@@ -87,7 +89,6 @@
         </v-card-text>
       </v-card>
     </v-dialog>
-    </v-card>
     <!-- <v-btn @click.prevent="table.getData()">reload</v-btn> -->
   </div>
 </template>
@@ -96,6 +97,8 @@
 import Datatable from "@/classes/datatable/datatable";
 import { Header } from "@/classes/datatable/datatableInterface";
 import { currency } from "@/utils/helpers";
+import AppForm from '@/classes/form/components/Form.vue'
+
 import Vue from "vue";
 export default Vue.extend({
   props: {
@@ -106,6 +109,9 @@ export default Vue.extend({
       dialog : false
     }
   },
+  components:{
+    AppForm
+  },
   computed:{
     totalsHeaders(){
       return this.table.headers.filter((header:Header) => {
@@ -115,6 +121,9 @@ export default Vue.extend({
   },
   methods: {
     currency: (x: number) => currency(x),
+    filter(val:any){
+      this.table.getData()
+    },
     showTotals(){
       this.dialog=true
     }

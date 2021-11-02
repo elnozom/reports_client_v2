@@ -11,4 +11,9 @@ tbody tr.v-data-table__mobile-table-row td:first-child {
   background-color: var(--primary) !important;
   color: #fff !important;
 }
+
+.v-navigation-drawer, .v-app-bar {
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
 /*# sourceMappingURL=overrides.css.map */
