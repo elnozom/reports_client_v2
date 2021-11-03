@@ -12,3 +12,12 @@ tbody tr.v-data-table__mobile-table-row td:first-child {
 .v-navigation-drawer , .v-app-bar{
     transition: var(--transition)
 }
+
+.v-input__icon--append i{
+    font-size: 15px !important;
+    color: var(--error) !important;
+}
+
+.v-data-table__wrapper table tr td.text-start , .v-data-table__wrapper table tr th.text-start {
+    text-align: center !important;
+}

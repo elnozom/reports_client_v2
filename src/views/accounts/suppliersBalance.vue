@@ -1,9 +1,9 @@
 <template>
-    <datatable :table="data"/>
+  <datatable :table="data"/> 
 </template>
 <script lang="ts">
 import Vue from "vue";
-import data from "@/datatables/pos/cashtray";
+import data from "@/datatables/accounts/supplier-balance";
 import datatable from "@/utils/datatable/components/datatable.vue";
 export default Vue.extend({
   name: "pos-cashtray",
@@ -17,3 +17,4 @@ export default Vue.extend({
   },
 });
 </script>
+

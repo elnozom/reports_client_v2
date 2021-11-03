@@ -7,6 +7,7 @@
     :items="input.items"
     :loading="input.loading"
     :prepend-icon="input.icon"
+    :append-icon="input.required ? 'mdi-asterisk' : ''"
     return-object
     hide-details
     :label="$t(input.label)"
@@ -22,6 +23,10 @@ export default Vue.extend({
   },
   methods:{
       change(val:any){
+        console.log(val)
+        console.log(this.input.value)
+        this.input.val = val[this.input.value]
+        console.log(this.input.val)
           this.$emit('change' , val)
       }
   }

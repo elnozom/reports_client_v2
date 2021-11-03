@@ -3,6 +3,7 @@
   "powerd_by":"powerd by",
   "error_getting_data" : "some unknown error happened please refresh the page or call customer support",
   "cashtray_desc":"This report enables you to view Shifts details of a specific year...",
+  "select_data" : "please provide required fields to view the report",
   "sidebar" : {
     "products" : "Products",
     "pos" : "pos",
@@ -17,6 +18,7 @@
     "top_sales" : "top sales",
     "stock" : "stock",
     "trans_cycle" : "transaction cycle",
+    "driver_totals":"driver totals",
     "cashtray" : "cashtray"
   }
 }

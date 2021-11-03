@@ -8,6 +8,7 @@
     :items="input.items"
     :clearable="input.clearable"
     :loading="input.loading"
+    :append-icon="input.required ? 'mdi-asterisk' : ''"
     :prepend-icon="input.icon"
     hide-details
     :label="$t(input.label)"
@@ -21,6 +22,7 @@ export default Vue.extend({
   props: {
     input: Object,
   },
+
   methods:{
       change(val:any){
         this.input.val = val

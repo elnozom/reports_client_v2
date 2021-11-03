@@ -19,7 +19,7 @@
             height="300px"
           >
             <template v-slot:top >
-               <app-form :form="table.filters" @change="filter"/>
+               <app-form :form="table.filters" @change="filter" v-if="table.hasFilters"/>
                <div class="pa-4">
                 <v-btn v-if="!table.error" color="primary" class="w-full my-4" @click.prevent="showTotals">{{$t('show_totals')}}</v-btn>
 
@@ -31,6 +31,9 @@
                   {{ $t("error_getting_data") }}
                 </td>
               </tr>
+            </template>
+             <template v-slot:no-data  v-if="table.hasFilters && !table.filters.valid">
+                  {{ $t("select_data") }}
             </template>
             <template slot="body.append" v-if="table.hasFooter && table.data.length > 0">
               <tr class="text-center md-hidden black--text bg-gredient">
@@ -100,6 +103,7 @@ import { currency } from "@/utils/helpers";
 import AppForm from '@/utils/form/components/Form.vue'
 
 import Vue from "vue";
+import { InputInterface } from "@/utils/form/interface";
 export default Vue.extend({
   props: {
     table: Datatable,
@@ -122,7 +126,12 @@ export default Vue.extend({
   methods: {
     currency: (x: number) => currency(x),
     filter(val:any){
-      this.table.getData()
+      // reset headers totals to avoid sum bug
+      // if we dont do this the class will add the totals to thee preevios data totals
+      this.table.headers.forEach((header:Header) => {
+        header.total = 0
+      })
+        this.table.getData()
     },
     showTotals(){
       this.dialog=true

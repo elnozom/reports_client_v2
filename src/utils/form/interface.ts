@@ -14,8 +14,10 @@ export type DateInputInterface = {
     label : string
     min : string
     max : string
+    required?:boolean
     val?:any
     value : string
+    limit:string
     initial?:any
     type: string
 }

@@ -1,6 +1,6 @@
 <template>
 <v-container>
-    <v-form v-model="form.valid">
+    <v-form>
         <slot name="title" />
         <v-row>
             <v-col cols="6" v-for="(input , index) in form.inputs" :key="index">
@@ -33,10 +33,28 @@ export default Vue.extend({
         form:Form
     },
     methods:{
+        validate():boolean{
+            if(this.form.hasValidation == false){
+                return true
+            }
+            for (let index = 0; index < this.form.inputs.length; index++) {
+                const input = this.form.inputs[index];
+                if(input.required == true && ( input.val == null || typeof input.val == 'undefined')){
+                    return false
+                }
+                
+            }
+            return true
+        },
+        // this method will be code when any input in the form changed
         change(input:InputInterface) {
-            let form =  this.form.form
+            this.form.valid = false
+            this.form.valid = true
+            let form =  this.form.state
             form[input.name as keyof typeof form] = input.val
-            this.$emit('change' , input.val)
+            if(this.validate()){
+                this.$emit('change' , input.val)
+            }
         }
     }
 })

@@ -1,5 +1,5 @@
 <template>
-    <datatable :table="data"/>
+  <datatable :table="data"/> 
 </template>
 <script lang="ts">
 import Vue from "vue";

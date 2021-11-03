@@ -14,8 +14,8 @@ export default [
         to: `/open-cashtray`,
       },
       {
-        icon: "mdi-database-lock-outline",
-        title: "sidebar.motorbike",
+        icon: "mdi-motorbike",
+        title: "sidebar.driver_totals",
         to: `/driver-totals`,
       },
     ]

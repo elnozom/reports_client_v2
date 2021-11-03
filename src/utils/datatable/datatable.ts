@@ -12,6 +12,7 @@ export default class Datatable{
     description: string
     headers: Header[]
     url:string
+    hasFilters:boolean = false
     hasFooter:boolean
     data:any[] = []
     search:string=""
@@ -26,7 +27,10 @@ export default class Datatable{
         this.url = details.url
         this.hasFooter = details.hasFooter
         // because details is nullable so we use simple check to set this value
-        if(details.filters) this.filters = details.filters
+        if(details.filters){
+            this.filters = details.filters
+            this.hasFilters = true
+        }
 
         this.getData()
     }
@@ -37,7 +41,7 @@ export default class Datatable{
             let url = this.url
             // check if this datatable has filters so we serialize the form object to send the filters with request as query string
             //{filter : "value" ,filter2 : "value2" } will be url?key=value&key2=value2
-            if(typeof this.filters !='undefined' ) url += `?${serializeQuery(this.filters.form)}`
+            if(typeof this.filters !='undefined' ) url += `?${serializeQuery(this.filters.state)}`
             // use the axios base class to send the request to the server with generated url
             Http.get<any[]>(url)
             .then((res) =>  {

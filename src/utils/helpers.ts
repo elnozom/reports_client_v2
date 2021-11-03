@@ -6,6 +6,7 @@ export const switchLanguage = (locale: string, ctx: any) => {
 };
 
 export const numberWithCommas = (x: number) => {
+  return x
     const xFixed = x.toFixed(3)
     return xFixed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
@@ -87,3 +88,5 @@ export const serializeQuery = (payload: Object) => {
 
   // return 
 }
+
+export const required = (v:any) => !!v || 'required'

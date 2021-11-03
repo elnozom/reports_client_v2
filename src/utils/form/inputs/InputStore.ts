@@ -26,7 +26,7 @@ export const yearInput:SelectInputInterface =  {
 
 export const storeInput:SelectInputInterface =  {
     name:"store",
-    cache : true,
+    cache : false,
     loading : false,
     text : 'store_name',
     initialFetch:true,
@@ -53,8 +53,47 @@ export const groupInput:SelectInputInterface =  {
 }
 
 
+export const driversInput:SelectInputInterface =  {
+    name:"EmpCode",
+    cache : true,
+    loading : false,
+    text : 'EmpName',
+    value : 'EmpCode',
+    initialFetch:true,
+    type : 'combo',
+    items :[],
+    url:'get-drivers',
+    icon : 'mdi-motorbike',
+    label : 'drivers'
+}
+
+
+export const accountInput:SelectInputInterface =  {
+    name:"AccSerial",
+    cache : true,
+    loading : false,
+    text : 'AccountName',
+    value : 'Serial',
+    initialFetch:true,
+    type : 'combo',
+    items :[],
+    url:'get-account',
+    icon : 'mdi-account-outline',
+    label : 'account'
+}
+let supplier = {...accountInput}
+supplier.url += '?type=2'
+supplier.label = 'supplier'
+
+export const supplierInput = supplier
+
+
+
+supplierInput
+
+
 export const accountType:SelectInputInterface =  {
-    name:"account_type",
+    name:"accType",
     cache : true,
     loading : false,
     text : 'key',
@@ -67,23 +106,43 @@ export const accountType:SelectInputInterface =  {
 }
 
 export const fromDate:DateInputInterface =  {
-    name:"from_date",
+    name:"fromDate",
     label : "from_date",
+    limit:'date',
     min : "",
     max : currentDate,
     type:'date',
     value : "",
 }
+
+export const monthDate:DateInputInterface =  {
+    name:"date",
+    label : "date",
+    min : "",
+    max : currentDate,
+    type:'date',
+    limit:'month',
+    value : "",
+}
+
 
 
 export const toDate:DateInputInterface =  {
-    name:"to_date",
+    name:"toDate",
     label : "to_date",
     min : "",
+    limit:'date',
     max : currentDate,
     type:'date',
     value : "",
 }
 
 
+let fromDateReq = {...fromDate}
+fromDateReq.required = true
+const toDateReq = {...toDate}
+toDateReq.required = true
+
+export const fromDateRequired = fromDateReq
+export const toDateRequired = toDateReq
 

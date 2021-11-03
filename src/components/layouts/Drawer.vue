@@ -60,7 +60,7 @@
       color="bgdarker"
     >
     
-        <img v-show="!drawer" src="../../assets/img/icon.png"  class="w-40 transition"/>
+        <router-link to="/"> <img  v-show="!drawer" src="../../assets/img/icon.png"  class="w-40 transition"/></router-link>
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <div class="d-flex align-center">
       </div>

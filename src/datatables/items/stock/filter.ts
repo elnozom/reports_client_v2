@@ -1,6 +1,6 @@
-import Form from '../Form';
-import { InputInterface} from './../interface';
-import { yearInput , storeInput} from '../inputs/InputStore'
+import Form from '../../../utils/form/Form';
+import { InputInterface} from '../../../utils/form/interface';
+import { yearInput , storeInput} from '../../../utils/form/inputs/InputStore'
 const inputs:InputInterface[] = [
     storeInput,
     yearInput

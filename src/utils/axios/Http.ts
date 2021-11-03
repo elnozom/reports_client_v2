@@ -22,7 +22,8 @@ export default abstract class HttpClient {
   }
 
   private _handleRequest = (config: AxiosRequestConfig) => {
-    const token = localStorage.getItem('token')
+    // const token = localStorage.getItem('token')
+    const token = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzYyMDUyMjMsImlkIjoxfQ.PVC5_sp4B_UG7nVFg9pnOaAD7nEQ7JMZ2Kul-LOqSn4`
     config.headers['Authorization'] = `Bearer ${token}`;
 
     return config;

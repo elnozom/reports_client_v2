@@ -1,9 +1,7 @@
 import { Header } from '@/utils/datatable/datatableInterface';
 import DatatableIntetrface from '@/utils/datatable/datatableInterface'
 import Datatable  from '@/utils/datatable/datatable'
-import cashtrayFilter from '@/utils/form/forms/cashtrayFilter';
-
-
+import filters from './filter';
 const headers:Header[] = [
   {value:'MonthNo', text: 'MonthNo' , isPrice : false , isTotal:false , total:0},
   {value:'TotalOrder', text: 'TotalOrder' , isPrice : false , isTotal:false , total:0},
@@ -21,7 +19,7 @@ const params:DatatableIntetrface = {
     title : "cashtray",
     headers ,
     description:"cashtray_desc",
-    filters:cashtrayFilter,
+    filters,
     url,
     hasFooter:true,
 }
