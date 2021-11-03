@@ -12,7 +12,7 @@
 <script lang="ts">
 import Vue from "vue";
 import cashtray from "@/datatables/pos/cashtray";
-import datatable from "@/components/base/datatable.vue";
+import datatable from "@/utils/datatable/components/datatable.vue";
 export default Vue.extend({
   name: "pos-cashtray",
   components:{

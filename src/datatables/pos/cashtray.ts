@@ -1,8 +1,7 @@
-import { currentYear } from '@/utils/helpers';
-import { Header } from '@/classes/datatable/datatableInterface';
-import DatatableIntetrface from '@/classes/datatable/datatableInterface'
-import Datatable  from '@/classes/datatable/datatable'
-import cashtrayFilter from '@/classes/form/forms/cashtrayFilter';
+import { Header } from '@/utils/datatable/datatableInterface';
+import DatatableIntetrface from '@/utils/datatable/datatableInterface'
+import Datatable  from '@/utils/datatable/datatable'
+import cashtrayFilter from '@/utils/form/forms/cashtrayFilter';
 
 
 const headers:Header[] = [
@@ -16,10 +15,6 @@ const headers:Header[] = [
   {value:'AvgBasket', text: 'AvgBasket' , isPrice : true , isTotal:true , total:0},
 ]
 
-const payload = {
-  year : "2021",
-  store : 0
-}
 const url = "cashtray"
 
 const params:DatatableIntetrface = {
@@ -29,7 +24,6 @@ const params:DatatableIntetrface = {
     filters:cashtrayFilter,
     url,
     hasFooter:true,
-    payload
 }
 const datatable = new Datatable(params)
 export default datatable

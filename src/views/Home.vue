@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts">
-import AppForm from '@/classes/form/components/Form.vue'
-import TestForm from "@/classes/form/forms/test";
+import AppForm from '@/utils/form/components/Form.vue'
+import TestForm from "@/utils/form/forms/test";
 import Vue from "vue";
 export default Vue.extend({
   name: "Home",

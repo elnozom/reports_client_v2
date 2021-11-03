@@ -1,5 +1,5 @@
-import DatatableIntetrface , { Header }  from '@/classes/datatable/datatableInterface'
-import Datatable  from '../../classes/datatable/datatable'
+import DatatableIntetrface , { Header }  from '@/utils/datatable/datatableInterface'
+import Datatable  from '@/utils/datatable/datatable'
 const headers:Header[] = [
     {value:'AccountCode', text: 'AccountCode' , isPrice : false , isTotal:false , total:0},
     {value:'AccountName', text: 'AccountName' , isPrice : false , isTotal:false , total:0},
@@ -14,11 +14,11 @@ const headers:Header[] = [
 ]
 const url = "supplier-balance"
 const params:DatatableIntetrface = {
-  title : "supplier balance",
+  title : "supplier_balance",
+  description:"supplier_balance_desc",
   headers ,
   url,
   hasFooter:true,
-  payload : {}
 }
 const datatable = new Datatable(params)
 export default datatable

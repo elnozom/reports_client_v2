@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import DataTable from "@/components/base/datatable.vue";
+import DataTable from "@/utils/datatable/components/datatable.vue";
 
 describe("HelloWorld.vue", () => {
   it("renders props.msg when passed", () => {

@@ -1,16 +1,12 @@
 <template>
   <v-app>
     <loading v-if="loading"/>
-    <drawer  v-if="!loading"/>
-    <v-main v-if="!loading">
-      <router-view />
-    </v-main>
+    <router-view />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import Drawer from "@/components/layouts/Drawer.vue";
 import Loading from "@/components/layouts/Loading.vue";
 import {mapGetters} from 'vuex'
 import { switchLanguage } from "@/utils/helpers";
@@ -18,7 +14,6 @@ import { switchLanguage } from "@/utils/helpers";
 export default Vue.extend({
   name: "App",
   components: {
-    Drawer,
     Loading
   },
   computed:{

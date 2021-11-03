@@ -17,7 +17,6 @@ export default interface DatatableIntetrface {
     url:string
     description:string
     headers: Header[]
-    payload:Object
     filters?:Form
     hasFooter:boolean
 }

@@ -73,3 +73,17 @@ export const switchMode = (mode: string, ctx: any) => {
   localStorage.setItem("mode", mode);
   ctx.$vuetify.theme.dark = mode === "dark";
 };
+
+
+export const serializeQuery = (payload: Object) => {
+  const obj = clearNullValues(payload)
+  const keys = Object.keys(obj)
+  // const key as keyof obj
+  return keys.map((k: any) => {
+    const key = k as keyof typeof obj
+    const current = obj[key] as unknown as string
+    return `${encodeURIComponent(key)}=${encodeURIComponent(current)}`
+  }).join("&")
+
+  // return 
+}

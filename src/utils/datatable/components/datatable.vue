@@ -21,7 +21,7 @@
             <template v-slot:top >
                <app-form :form="table.filters" @change="filter"/>
                <div class="pa-4">
-                <v-btn color="primary" class="w-full my-4" @click.prevent="showTotals">{{$t('show_totals')}}</v-btn>
+                <v-btn v-if="!table.error" color="primary" class="w-full my-4" @click.prevent="showTotals">{{$t('show_totals')}}</v-btn>
 
                </div>
             </template>
@@ -94,10 +94,10 @@
 </template>
 
 <script lang="ts">
-import Datatable from "@/classes/datatable/datatable";
-import { Header } from "@/classes/datatable/datatableInterface";
+import Datatable from "@/utils/datatable/datatable";
+import { Header } from "@/utils/datatable/datatableInterface";
 import { currency } from "@/utils/helpers";
-import AppForm from '@/classes/form/components/Form.vue'
+import AppForm from '@/utils/form/components/Form.vue'
 
 import Vue from "vue";
 export default Vue.extend({

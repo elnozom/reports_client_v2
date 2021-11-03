@@ -1,8 +1,13 @@
+import { serializeQuery } from './../helpers';
+// this class is responsible for generating datatable
+// we can say that this is the datatable kitchen
 import DatatableIntetrface , {Header , Totals} from './datatableInterface'
-import HttpClient from '../axios/http'
 import { currency } from '@/utils/helpers'
 import Form from '../form/Form'
-export default class Datatable extends HttpClient{ 
+import Api from '../axios/Api';
+
+const Http = Api.getInstance();
+export default class Datatable{ 
     title: string
     description: string
     headers: Header[]
@@ -13,37 +18,45 @@ export default class Datatable extends HttpClient{
     loading:boolean = true
     filters?:Form
     error:boolean = false
-    payload:Object
     totals:Totals[] = []
     public constructor(details:DatatableIntetrface){
-        super()
         this.title = details.title
-        this.headers = details.headers
         this.description = details.description
+        this.headers = details.headers
         this.url = details.url
-        this.payload = details.payload
         this.hasFooter = details.hasFooter
+        // because details is nullable so we use simple check to set this value
         if(details.filters) this.filters = details.filters
 
         this.getData()
     }
-
-    public setHasFooter(val:boolean){
-        this.hasFooter = val
-    }
+    // get the datatable data from the server
     public getData() {
         return new Promise((resolve , reject) => {
             this.loading = true
             let url = this.url
-            if(typeof this.filters !='undefined' ) url += `?${this.serializeQuery(this.filters.form)}`
-            this.instance.get<any[]>(url)
+            // check if this datatable has filters so we serialize the form object to send the filters with request as query string
+            //{filter : "value" ,filter2 : "value2" } will be url?key=value&key2=value2
+            if(typeof this.filters !='undefined' ) url += `?${serializeQuery(this.filters.form)}`
+            // use the axios base class to send the request to the server with generated url
+            Http.get<any[]>(url)
             .then((res) =>  {
+                // first check if response is null to set it to empty array to avoid errors on the datatable component
+                // because it expects to reserve an array
+                // and reset is just setting loading and error to default values
                 if(res == null){
                     this.data  = []
                     this._reset()
                     return 
                 }
+
+                // convert response to be able to work without errors from typescript
                 const data =  res as unknown as any[]
+
+                // check if datatable has footer which is flag to indicate that data needs to be mapped
+                // which means also one or more of header is price or has total
+                // so if its price we convert it to money 
+                // an if its total that means we need to sum all the values to display it into datatable footer
                 if(this.hasFooter){
                     data.map((i:any) => {
                         this.headers.forEach((header:Header) => {
@@ -70,7 +83,6 @@ export default class Datatable extends HttpClient{
 
 
     private _reset(){
-        
         this.loading = false
         this.error = false
     }

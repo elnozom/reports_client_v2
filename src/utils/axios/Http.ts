@@ -1,4 +1,9 @@
-import { clearNullValues } from './../../utils/helpers';
+import { state } from './../../store/ui/index';
+// this abstract class is responsible for creating axios instance 
+// set the base api url
+// set the authorization token on requests which use auth middleware
+// and finally do some error
+import router from '@/router';
 import axios, { AxiosInstance, AxiosResponse, AxiosRequestConfig } from 'axios';
 
 declare module 'axios' {
@@ -10,7 +15,7 @@ export default abstract class HttpClient {
 
   public constructor() {
     this.instance = axios.create({
-      baseURL: "http://192.168.1.40:8585/api/",
+      baseURL: process.env.VUE_APP_API_URL,
     });
     this._initializeRequestInterceptor();
     this._initializeResponseInterceptor();
@@ -41,19 +46,14 @@ export default abstract class HttpClient {
 
   private _handleResponse = ({ data }: AxiosResponse) => data;
 
-  protected _handleError = (error: any) => Promise.reject(error);
-
-  public serializeQuery = (payload: Object) => {
-    const obj = clearNullValues(payload)
-    const keys = Object.keys(obj)
-    // const key as keyof obj
-    return keys.map((k: any) => {
-      const key = k as keyof typeof obj
-      const current = obj[key] as unknown as string
-      return `${encodeURIComponent(key)}=${encodeURIComponent(current)}`
-    }).join("&")
-
-    // return 
+  protected _handleError = (error: any) => {
+    if( typeof error.response == 'undefined' ||error.response.status === 500){
+      router.push('/server-error')
+    }
+    if(error.response.status == 403){
+      console.log('unauth')
+    }
+    Promise.reject(error);
   }
 
 }
