@@ -49,7 +49,7 @@ export default abstract class HttpClient {
 
   protected _handleError = (error: any) => {
     if( typeof error.response == 'undefined' ||error.response.status === 500){
-      router.push('/server-error')
+      // router.push('/server-error')
     }
     if(error.response.status == 403){
       console.log('unauth')

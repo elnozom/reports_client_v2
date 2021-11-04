@@ -3,7 +3,7 @@
    
       <v-container>
         <v-row>
-          <v-col cols="12" v-if="table.hasFooter  && table.data.length > 0">
+          <v-col cols="12">
             <h2 class="primary-text mb-4">{{$t(table.title)}}</h2>
             <p class="">{{$t(table.description)}}</p>
           </v-col>
@@ -16,12 +16,12 @@
             :search="table.search"
             class="elevation-4"
             fixed-header
-            height="300px"
+            height="400px"
           >
             <template v-slot:top >
                <app-form :form="table.filters" @change="filter" v-if="table.hasFilters"/>
                <div class="pa-4">
-                <v-btn v-if="!table.error" color="primary" class="w-full my-4" @click.prevent="showTotals">{{$t('show_totals')}}</v-btn>
+                <v-btn v-if="!table.error && (!table.hasFilters || table.filters.valid)" color="primary" class="w-full my-4" @click.prevent="showTotals">{{$t('show_totals')}}</v-btn>
 
                </div>
             </template>

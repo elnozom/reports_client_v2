@@ -1,9 +1,9 @@
 import Form from '../../../utils/form/Form';
-import { InputInterface} from '../../../utils/form/interface';
-import { monthDate , storeInput} from '../../../utils/form/inputs/InputStore'
-const inputs:InputInterface[] = [
-    monthDate,
-    storeInput,
+import { convertToRequred , monthDate , storeInput} from '../../../utils/form/inputs/InputStore'
+import Input from '@/utils/form/inputs/Input';
+const inputs:Input[] = [
+    new Input(convertToRequred(monthDate)),
+    new Input(storeInput),
 ]
 
 const submit:Function = () => {

@@ -18,15 +18,18 @@
 
 <script lang="ts">
 import Vue from "vue";
+import { InputInterface } from "../interface";
 export default Vue.extend({
   props: {
     input: Object,
   },
-
   methods:{
       change(val:any){
+        if(typeof this.input.change != 'undefined'){
+          this.input.change(val)
+        }
         this.input.val = val
-          this.$emit('change')
+        this.$emit('change')
       }
   }
 });

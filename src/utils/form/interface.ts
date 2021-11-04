@@ -1,3 +1,5 @@
+import Input from "./inputs/Input"
+
 export type TextInputInterface = {
     name: string
     label: string
@@ -8,6 +10,15 @@ export type TextInputInterface = {
     initial?:any,
     required?:boolean
     value:any
+}
+export type SwitchInputInterface = {
+    name: string
+    label: string
+    cols: number
+    required?:boolean
+    initial?:any,
+    type:string
+    val?:boolean
 }
 export type DateInputInterface = {
     name: string
@@ -37,14 +48,15 @@ export type SelectInputInterface = {
     icon: string
     label: string
     url?:string
+    change?:Function
     required?:boolean
     payload?:Object
 }
 
-export type InputInterface = SelectInputInterface | TextInputInterface | DateInputInterface
+export type InputInterface = SelectInputInterface | TextInputInterface | DateInputInterface | SwitchInputInterface
 
 export interface FormInterface {
-    inputs: InputInterface[]
+    inputs: Input[]
     loading: boolean
     valid:boolean 
     submit: Function

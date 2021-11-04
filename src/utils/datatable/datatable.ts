@@ -36,6 +36,10 @@ export default class Datatable{
     }
     // get the datatable data from the server
     public getData() {
+        if(typeof this.filters != 'undefined' && !this.filters?.valid){
+            this._reset()
+            return
+        }
         return new Promise((resolve , reject) => {
             this.loading = true
             let url = this.url
@@ -53,7 +57,8 @@ export default class Datatable{
                     this._reset()
                     return 
                 }
-
+                
+                
                 // convert response to be able to work without errors from typescript
                 const data =  res as unknown as any[]
 

@@ -12,9 +12,7 @@ const headers:Header[] = [
   {value:'Cheqin', text: 'Cheqin' , isPrice : true , isTotal:true , total:0},
   {value:'Cheqout', text: 'Cheqout' , isPrice : true , isTotal:true , total:0},
 ]
-
 const url = "cash-flow"
-
 const params:DatatableIntetrface = {
     title : "cash_flow",
     headers ,

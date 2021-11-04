@@ -6,7 +6,7 @@ import Vue from "vue";
 import data from "@/datatables/accounts/supplier-balance";
 import datatable from "@/utils/datatable/components/datatable.vue";
 export default Vue.extend({
-  name: "pos-cashtray",
+  name: "supplier-balance",
   components:{
     datatable
   },

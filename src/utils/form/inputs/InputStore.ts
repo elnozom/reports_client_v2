@@ -1,6 +1,7 @@
+import { InputInterface } from '@/utils/form/interface';
 import { currentYear } from '@/utils/helpers';
 import { lastTenYearsArr, accountTypes, currentDate } from './../../../utils/helpers';
-import { TextInputInterface , DateInputInterface , SelectInputInterface } from '../interface';
+import { TextInputInterface , SwitchInputInterface , DateInputInterface , SelectInputInterface } from '../interface';
 
 export const searchInput:TextInputInterface =  {
     name : 'search',
@@ -66,11 +67,17 @@ export const driversInput:SelectInputInterface =  {
     icon : 'mdi-motorbike',
     label : 'drivers'
 }
-
+export const payCheqInput:SwitchInputInterface =  {
+    name:"PayCheq",
+    label : "PayCheq",
+    cols : 6,
+    type : 'switch',
+    val : false
+}
 
 export const accountInput:SelectInputInterface =  {
     name:"AccSerial",
-    cache : true,
+    cache : false,
     loading : false,
     text : 'AccountName',
     value : 'Serial',
@@ -81,15 +88,12 @@ export const accountInput:SelectInputInterface =  {
     icon : 'mdi-account-outline',
     label : 'account'
 }
+
 let supplier = {...accountInput}
 supplier.url += '?type=2'
 supplier.label = 'supplier'
 
 export const supplierInput = supplier
-
-
-
-supplierInput
 
 
 export const accountType:SelectInputInterface =  {
@@ -101,7 +105,7 @@ export const accountType:SelectInputInterface =  {
     initialFetch:false,
     type : 'select',
     items :accountTypes,
-    icon : 'mdi-safe-square-outline',
+    icon : 'mdi-account-cog-outline',
     label : 'account_type'
 }
 
@@ -138,11 +142,14 @@ export const toDate:DateInputInterface =  {
 }
 
 
-let fromDateReq = {...fromDate}
-fromDateReq.required = true
-const toDateReq = {...toDate}
-toDateReq.required = true
 
-export const fromDateRequired = fromDateReq
-export const toDateRequired = toDateReq
 
+
+
+
+
+export const convertToRequred = (input:InputInterface) => {
+    const req = {...input}
+    req.required = true
+    return req
+}

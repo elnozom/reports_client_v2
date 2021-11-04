@@ -3,10 +3,10 @@
 </template>
 <script lang="ts">
 import Vue from "vue";
-import data from "@/datatables/pos/cashtray";
+import data from "@/datatables/accounts/account-balance";
 import datatable from "@/utils/datatable/components/datatable.vue";
 export default Vue.extend({
-  name: "pos-cashtray",
+  name: "account-balance",
   components:{
     datatable
   },
