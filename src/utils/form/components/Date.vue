@@ -24,8 +24,8 @@
     <v-date-picker
       locale="en-in"
       color="primary"
-      :min="input.min"
-      :max="input.max"
+      
+      
       :type="input.limit"
       @change="change"
       no-title

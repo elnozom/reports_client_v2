@@ -16,6 +16,7 @@ export default interface DatatableIntetrface {
     title: string
     url:string
     description:string
+    searchable?:boolean
     headers: Header[]
     filters?:Form
     hasFooter:boolean

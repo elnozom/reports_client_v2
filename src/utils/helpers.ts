@@ -1,3 +1,5 @@
+import colors from './colors'
+
 export const switchLanguage = (locale: string, ctx: any) => {
   localStorage.setItem("locale", locale);
   ctx.$vuetify.rtl = locale === "ar";
@@ -9,6 +11,12 @@ export const numberWithCommas = (x: number) => {
     const xFixed = x.toFixed(3)
     return xFixed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
+
+export const generateColors = (n:number) => {
+  let c = colors
+  c.length = n
+  return c
+}
 
 export const currency = (x:number):string => {
   return `${numberWithCommas(x)} EGP`
@@ -87,5 +95,12 @@ export const serializeQuery = (payload: Object) => {
 
   // return 
 }
+
+export const getColor = (index:number) => {
+  return colors[index]
+}
+
+
+// export const createChart()
 
 export const required = (v:any) => !!v || 'required'

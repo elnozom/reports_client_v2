@@ -3,25 +3,21 @@ import DatatableIntetrface from '@/utils/datatable/datatableInterface'
 import Datatable  from '@/utils/datatable/datatable'
 import filters from './filter';
 const headers:Header[] = [
-  {value:'MonthNo', text: 'MonthNo' , isPrice : false , isTotal:false , total:0},
-  {value:'TotalOrder', text: 'TotalOrder' , isPrice : false , isTotal:false , total:0},
-  {value:'NoOfCashTry', text: 'NoOfCashTry' , isPrice : false , isTotal:false , total:0},
-  {value:'TotalCash', text: 'TotalCash' , isPrice : true , isTotal:true , total:0},
-  {value:'TVisa', text: 'TVisa' , isPrice : true , isTotal:true , total:0},
-  {value:'TVoid', text: 'TVoid' , isPrice : true , isTotal:true , total:0},
-  {value:'AverageCash', text: 'AverageCash' , isPrice : true , isTotal:true , total:0},
-  {value:'AvgBasket', text: 'AvgBasket' , isPrice : true , isTotal:true , total:0},
+  {value:'ItemCode', text: 'ItemCode' , isPrice : false , isTotal:false , total:0},
+  {value:'ItemName', text: 'ItemName' , isPrice : false , isTotal:false , total:0},
+  {value:'Raseed', text: 'Raseed' , isPrice : false , isTotal:false , total:0}
 ]
 
-const url = "cashtray"
+const url = "stock"
 
 const params:DatatableIntetrface = {
-    title : "cashtray",
+    title : "stock",
     headers ,
-    description:"cashtray_desc",
+    description:"stock_desc",
     filters,
+    searchable:true,
     url,
-    hasFooter:true,
+    hasFooter:false,
 }
 const datatable = new Datatable(params)
 export default datatable

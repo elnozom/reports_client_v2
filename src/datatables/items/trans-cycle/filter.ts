@@ -4,8 +4,8 @@ import Input from '@/utils/form/inputs/Input';
 const inputs: Input[] = [
    new Input(convertToRequred(fromDate)),
    new Input(convertToRequred(toDate)),
-   new Input(convertToRequred(storeInput)),
-   new Input(convertToRequred(supplierInput)),
+   new Input(storeInput),
+   new Input(supplierInput),
    new Input(groupInput)
 ]
 

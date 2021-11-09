@@ -68,8 +68,8 @@ export const driversInput:SelectInputInterface =  {
     label : 'drivers'
 }
 export const payCheqInput:SwitchInputInterface =  {
-    name:"PayCheq",
-    label : "PayCheq",
+    name:"payCheq",
+    label : "payCheq",
     cols : 6,
     type : 'switch',
     val : false
@@ -87,6 +87,20 @@ export const accountInput:SelectInputInterface =  {
     url:'get-account',
     icon : 'mdi-account-outline',
     label : 'account'
+}
+
+export const itemInput:SelectInputInterface =  {
+    name:"item",
+    cache : false,
+    loading : false,
+    text : 'ItemName',
+    value : 'Serial',
+    initialFetch:true,
+    type : 'combo',
+    items :[],
+    url:'get-item',
+    icon : 'mdi-cart-outline',
+    label : 'item'
 }
 
 let supplier = {...accountInput}

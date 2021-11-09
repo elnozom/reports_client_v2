@@ -32,4 +32,8 @@
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }
+
+.h-full {
+  height: 100%;
+}
 /*# sourceMappingURL=utilities.css.map */

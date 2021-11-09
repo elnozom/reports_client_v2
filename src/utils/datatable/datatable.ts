@@ -16,6 +16,7 @@ export default class Datatable{
     hasFooter:boolean
     data:any[] = []
     search:string=""
+    searchable:boolean = false
     loading:boolean = true
     filters?:Form
     error:boolean = false
@@ -27,6 +28,7 @@ export default class Datatable{
         this.url = details.url
         this.hasFooter = details.hasFooter
         // because details is nullable so we use simple check to set this value
+        if(details.searchable) this.searchable  = details.searchable
         if(details.filters){
             this.filters = details.filters
             this.hasFilters = true

@@ -11,7 +11,6 @@ const headers:Header[] = [
   {value:'ByWeight', text: 'ByWeight' , isPrice : false , isTotal:false , total:0},
   {value:'MinorPerMajor', text: 'MinorPerMajor' , isPrice : false , isTotal:false , total:0},
   {value:'BuyWhole', text: 'BuyWhole' , isPrice : false , isTotal:false , total:0},
-  {value:'AccountSerial', text: 'AccountSerial' , isPrice : false , isTotal:false , total:0},
   {value:'RaseedPart', text: 'RaseedPart' , isPrice : false , isTotal:false , total:0},
   {value:'RaseedWhole', text: 'RaseedWhole' , isPrice : false , isTotal:false , total:0},
   {value:'BuyPart', text: 'BuyPart' , isPrice : false , isTotal:false , total:0},

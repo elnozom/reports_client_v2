@@ -21,3 +21,15 @@ tbody tr.v-data-table__mobile-table-row td:first-child {
 .v-data-table__wrapper table tr td.text-start , .v-data-table__wrapper table tr th.text-start {
     text-align: center !important;
 }
+.m-chart:nth-child(1) .mini-chart{
+    background-color: var(--bg-4);
+}
+.m-chart:nth-child(2) .mini-chart{
+    background-color: var(--bg-1);
+}
+.m-chart:nth-child(3) .mini-chart{
+    background-color: var(--bg-2);
+}
+.m-chart:nth-child(4) .mini-chart{
+    background-color: var(--bg-3);
+}

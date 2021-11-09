@@ -10,6 +10,12 @@
   --success: #4CAF50;
   --warning: #FB8C00;
   --text-color:#fff;
+  --bg-1:#28968c;
+  --bg-1-lighter:#28968c;
+  --bg-3:#d44b71;
+  --bg-2:#a03f3e;
+  --bg-3-lighter:#e9a5b8;
+  --bg-4:#268bd2;
   --transition: all .3s ease-in;
 }
 

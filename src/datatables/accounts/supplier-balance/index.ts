@@ -17,6 +17,7 @@ const params:DatatableIntetrface = {
   title : "supplier_balance",
   description:"supplier_balance_desc",
   headers ,
+  searchable:true,
   url,
   hasFooter:true,
 }

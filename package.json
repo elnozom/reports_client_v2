@@ -10,6 +10,8 @@
     "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
   },
   "dependencies": {
+    "chart.js": "^3.6.0",
+    "chartjs-plugin-datalabels": "^2.0.0",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
     "vue": "^2.6.11",

@@ -2,14 +2,14 @@ import { Header } from '@/utils/datatable/datatableInterface';
 import DatatableIntetrface from '@/utils/datatable/datatableInterface'
 import Datatable  from '@/utils/datatable/datatable'
 import filters from './filter';
+
 const headers:Header[] = [
-  {value:'AccountCode', text: 'AccountCode' , isPrice : false , isTotal:false , total:0},
-  {value:'AccountName', text: 'AccountName' , isPrice : false , isTotal:false , total:0},
-  {value:'AccNo', text: 'AccNo' , isPrice : false , isTotal:false , total:0},
-  {value:'BBC', text: 'BBC' , isPrice : true , isTotal:true , total:0},
-  {value:'BBD', text: 'BBD' , isPrice : true , isTotal:true , total:0},
-  {value:'BAC', text: 'BAC' , isPrice : true , isTotal:true , total:0},
-  {value:'BAD', text: 'BAD' , isPrice : true , isTotal:true , total:0}
+  {value:'DocNo', text: 'DocNo' , isPrice : false , isTotal:false , total:0},
+  {value:'DocDate', text: 'DocDate' , isPrice : false , isTotal:false , total:0},
+  {value:'Dbt', text: 'Dbt' , isPrice : true , isTotal:true , total:0},
+  {value:'Crdt', text: 'Crdt' , isPrice : true , isTotal:true , total:0},
+  {value:'RaseedCrdt', text: 'RaseedCrdt' , isPrice : true , isTotal:true , total:0},
+  {value:'RaseedDbt', text: 'RaseedDbt' , isPrice : true , isTotal:true , total:0}
 ]
 
 const url = "get-account-balance"

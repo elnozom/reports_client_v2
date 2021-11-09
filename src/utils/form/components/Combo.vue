@@ -10,6 +10,7 @@
     :append-icon="input.required ? 'mdi-asterisk' : ''"
     return-object
     hide-details
+    :clearable="input.clearable || false"
     :label="$t(input.label)"
     single-line
   ></v-combobox>
