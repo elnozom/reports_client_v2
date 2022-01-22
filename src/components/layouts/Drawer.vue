@@ -13,6 +13,7 @@
         <v-list-item class="h-app-bar justify-between logo">
           <router-link :to="{ name: 'Home' }">
             <img src="../../assets/img/logo-light.png" />
+            <span>E-Solve</span>
           </router-link>
         </v-list-item>
         <v-list-item

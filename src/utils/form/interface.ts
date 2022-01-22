@@ -6,6 +6,7 @@ export type TextInputInterface = {
     icon: string
     cols: number
     type:string
+    rules?:Array<Function>,
     val?:any
     initial?:any,
     required?:boolean

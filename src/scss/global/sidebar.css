@@ -5,13 +5,12 @@
 
 .sidebar .v-list-item--active {
   background: var(--main-gredient);
-  color: #fff;
-  -webkit-box-shadow: var(--color-boxshadow);
-          box-shadow: var(--color-boxshadow);
+  color: #fff !important;
+  box-shadow: var(--color-boxshadow);
 }
 
 .sidebar .v-list-item--active .primary--text {
-  color: #fff;
+  color: #fff !important;
 }
 
 .sidebar .v-list-item.sub .v-list-item__action {
@@ -26,14 +25,24 @@
   height: 64px;
 }
 
+.sidebar .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .sidebar .logo a img {
-  width: 200px;
-  -webkit-transition: var(--primary-transition);
+  width: 40px;
   transition: var(--primary-transition);
+  margin-right: 20px;
+}
+
+.sidebar .logo a span {
+  font-size: 28px;
+  color: #fff;
 }
 
 .sidebar .logo::after {
   content: "";
   border-bottom: 1px solid black;
 }
-/*# sourceMappingURL=sidebar.css.map */

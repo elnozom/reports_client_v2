@@ -60,6 +60,42 @@
                 </th>
               </tr>
             </template>
+            <template v-slot:[`item.Img`]="{ item }">
+              <v-img :src="item.Img"></v-img>
+            </template>
+            <template v-slot:[`item.Actions`]="{ item }" >
+              <div class="actions">
+
+                  <v-btn
+                    v-if="table.hasEdit"
+                    @click.prevent="$router.push({name:`${$route.name}-edit` , params:{id:item.Id}})"
+                    color="primary"
+                    class="mr-4"
+                  >
+                  <v-icon
+                    small
+                  >
+                    mdi-pencil
+                  </v-icon>
+                  <!-- {{$t('table.edit')}} -->
+
+                </v-btn>
+                <v-btn
+                    v-if="table.hasView"
+                    @click.prevent="$router.push({name:`${$route.name}-view` , params:{id:item.Id}})"
+                    color="warning"
+                    class="mr-4"
+                  >
+                  <v-icon
+                    small
+                  >
+                    mdi-eye
+                  </v-icon>
+                  <!-- {{$t(' table.view')}} -->
+
+                </v-btn>
+              </div>
+            </template>
           </v-data-table>
           </v-col>
         </v-row>
@@ -111,7 +147,6 @@ import { currency } from "@/utils/helpers";
 import AppForm from '@/utils/form/components/Form.vue'
 
 import Vue from "vue";
-import { InputInterface } from "@/utils/form/interface";
 export default Vue.extend({
   props: {
     table: Datatable,

@@ -1,7 +1,6 @@
 import { InputInterface } from '@/utils/form/interface';
-import { currentYear } from '@/utils/helpers';
-import { lastTenYearsArr, accountTypes, currentDate } from './../../../utils/helpers';
 import { TextInputInterface , SwitchInputInterface , DateInputInterface , SelectInputInterface } from '../interface';
+import {name , required , email} from "@/utils/validations/validations" 
 
 export const searchInput:TextInputInterface =  {
     name : 'search',
@@ -11,150 +10,133 @@ export const searchInput:TextInputInterface =  {
     cols : 6,
     value : '',
 }
-export const yearInput:SelectInputInterface =  {
-    name:"year",
-    cache : true,
-    loading : false,
-    text : '',
-    initialFetch:false,
-    value : '',
-    initial:currentYear,
-    type : 'select',
-    items :lastTenYearsArr(),
-    icon : 'mdi-clipboard-text-clock-outline',
-    label : 'year'
-}
 
-export const storeInput:SelectInputInterface =  {
-    name:"store",
+
+export const roleInput:SelectInputInterface =  {
+    name:"Role_id",
     cache : false,
     loading : false,
-    text : 'store_name',
+    text : 'Name',
     initialFetch:true,
     clearable:true,
-    value : 'store_code',
+    value : 'Id',
     type : 'select',
-    url:'cashtray/stores',
+    url:'roles',
     icon : 'mdi-store-settings-outline',
-    label : 'store'
+    label : 'role'
 }
-export const groupInput:SelectInputInterface =  {
-    name:"group",
-    cache : true,
-    loading : false,
-    text : 'GroupName',
-    value : 'GroupCode',
-    initialFetch:true,
-    clearable:true,
-    type : 'combo',
-    items :[],
-    url:'groups',
-    icon : 'mdi-format-list-group',
-    label : 'group'
-}
-
-
-export const driversInput:SelectInputInterface =  {
-    name:"EmpCode",
-    cache : true,
-    loading : false,
-    text : 'EmpName',
-    value : 'EmpCode',
-    initialFetch:true,
-    type : 'combo',
-    items :[],
-    url:'get-drivers',
-    icon : 'mdi-motorbike',
-    label : 'drivers'
-}
-export const payCheqInput:SwitchInputInterface =  {
-    name:"payCheq",
-    label : "payCheq",
+export const featuredInput:SwitchInputInterface =  {
+    name:"Featured",
+    label : "featured",
     cols : 6,
     type : 'switch',
     val : false
 }
 
-export const accountInput:SelectInputInterface =  {
-    name:"AccSerial",
-    cache : false,
-    loading : false,
-    text : 'AccountName',
-    value : 'Serial',
-    initialFetch:true,
-    type : 'combo',
-    items :[],
-    url:'get-account',
-    icon : 'mdi-account-outline',
-    label : 'account'
+export const nameArInput:TextInputInterface =  {
+    name:"Name_ar",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => name(value) ,
+    ],
+    required:true,
+    label : "Name_ar",
+    cols : 6,
+    type : 'text',
+    value:""
 }
-
-export const itemInput:SelectInputInterface =  {
-    name:"item",
-    cache : false,
-    loading : false,
-    text : 'ItemName',
-    value : 'Serial',
-    initialFetch:true,
-    type : 'combo',
-    items :[],
-    url:'get-item',
-    icon : 'mdi-cart-outline',
-    label : 'item'
+export const nameInput:TextInputInterface =  {
+    name:"Name",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => name(value) ,
+    ],
+    required:true,
+    label : "Name",
+    cols : 6,
+    type : 'text',
+    value:""
 }
-
-let supplier = {...accountInput}
-supplier.url += '?type=2'
-supplier.label = 'supplier'
-
-export const supplierInput = supplier
-
-
-export const accountType:SelectInputInterface =  {
-    name:"accType",
-    cache : true,
-    loading : false,
-    text : 'key',
-    value : 'value',
-    initialFetch:false,
-    type : 'select',
-    items :accountTypes,
-    icon : 'mdi-account-cog-outline',
-    label : 'account_type'
-}
-
-export const fromDate:DateInputInterface =  {
-    name:"fromDate",
-    label : "from_date",
-    limit:'date',
-    min : "",
-    max : currentDate,
-    type:'date',
-    value : "",
-}
-
-export const monthDate:DateInputInterface =  {
-    name:"date",
-    label : "date",
-    min : "",
-    max : currentDate,
-    type:'date',
-    limit:'month',
-    value : "",
+export const emailInput:TextInputInterface =  {
+    name:"Email",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => email(value) ,
+    ],
+    label : "Email",
+    cols : 6,
+    type : 'text',
+    value:""
 }
 
 
 
-export const toDate:DateInputInterface =  {
-    name:"toDate",
-    label : "to_date",
-    min : "",
-    limit:'date',
-    max : currentDate,
-    type:'date',
-    value : "",
+export const passwordInput:TextInputInterface =  {
+    name:"Password",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => name(value) ,
+    ],
+    label : "Password",
+    cols : 6,
+    type : 'password',
+    value:""
+}
+export const phoneInput:TextInputInterface =  {
+    name:"Phone",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => name(value) ,
+    ],
+    label : "Phone",
+    cols : 6,
+    type : 'text',
+    value:""
 }
 
+export const websiteInput:TextInputInterface =  {
+    name:"Website",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => name(value) ,
+    ],
+    label : "Website",
+    cols : 6,
+    type : 'text',
+    value:""
+}
+
+export const instagramInput:TextInputInterface =  {
+    name:"Instagram",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => name(value) ,
+    ],
+    label : "Instagram",
+    cols : 6,
+    type : 'text',
+    value:""
+}
+
+export const twitterInput:TextInputInterface =  {
+    name:"Twitter",
+    icon: "",
+    rules:[
+        (value:string) => required(value) ,
+      (value:string) => name(value) ,
+    ],
+    label : "Twitter",
+    cols : 6,
+    type : 'text',
+    value:""
+}
 
 
 

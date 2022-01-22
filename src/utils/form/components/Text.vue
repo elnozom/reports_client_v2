@@ -2,6 +2,8 @@
     <v-text-field
       :label="$t(input.label)"
       :prepend-icon="input.icon"
+      :append-icon="input.required ? 'mdi-asterisk' : ''"
+      :rules="input.rules ? input.rules : []"
       @input="$emit('input' , val)"
     ></v-text-field>
 </template>

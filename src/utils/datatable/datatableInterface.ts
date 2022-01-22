@@ -20,4 +20,6 @@ export default interface DatatableIntetrface {
     headers: Header[]
     filters?:Form
     hasFooter:boolean
+    hasEdit?:boolean
+    hasView?:boolean
 }

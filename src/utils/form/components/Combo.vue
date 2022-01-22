@@ -5,6 +5,7 @@
     :item-text="input.text"
     :item-value="input.value"
     :items="input.items"
+    :rules="input.rules ? input.rules : []"
     :loading="input.loading"
     :prepend-icon="input.icon"
     :append-icon="input.required ? 'mdi-asterisk' : ''"

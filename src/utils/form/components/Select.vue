@@ -11,6 +11,7 @@
     :append-icon="input.required ? 'mdi-asterisk' : ''"
     :prepend-icon="input.icon"
     hide-details
+    :rules="input.rules ? input.rules : []"
     :label="$t(input.label)"
     single-line
   ></v-select>

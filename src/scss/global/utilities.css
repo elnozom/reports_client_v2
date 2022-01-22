@@ -2,6 +2,12 @@
   color: var(--text-color) !important;
 }
 
+.danger {
+  background-color: lightcoral;
+  color: #fff;
+  padding: 20px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -29,11 +35,9 @@
 }
 
 .transition {
-  -webkit-transition: var(--transition);
   transition: var(--transition);
 }
 
 .h-full {
   height: 100%;
 }
-/*# sourceMappingURL=utilities.css.map */

@@ -20,6 +20,8 @@ export default class Datatable{
     loading:boolean = true
     filters?:Form
     error:boolean = false
+    hasEdit:boolean = false
+    hasView:boolean = false
     totals:Totals[] = []
     public constructor(details:DatatableIntetrface){
         this.title = details.title
@@ -29,6 +31,8 @@ export default class Datatable{
         this.hasFooter = details.hasFooter
         // because details is nullable so we use simple check to set this value
         if(details.searchable) this.searchable  = details.searchable
+        if(details.hasEdit) this.hasEdit  = details.hasEdit
+        if(details.hasView) this.hasView  = details.hasView
         if(details.filters){
             this.filters = details.filters
             this.hasFilters = true

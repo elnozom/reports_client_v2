@@ -2,6 +2,11 @@
 .text-color{
     color:var(--text-color) !important
 }
+.danger{
+    background-color: lightcoral;
+    color: #fff;
+    padding: 20px;
+}
 .w-full{
     width: 100%;
 }

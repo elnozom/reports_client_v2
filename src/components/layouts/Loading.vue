@@ -7,10 +7,10 @@
             indeterminate
             ></v-progress-circular>
         <img   src="../../assets/img/logo-light.png"/>
-        <div class="powerd">
+        <!-- <div class="powerd">
             <span>{{$t("powerd_by")}}</span>
             <img   src="../../assets/img/cloud.png"/>
-        </div>
+        </div> -->
     </div>
 </template>
 <style scoped src="@/scss/components/loading.css" />
